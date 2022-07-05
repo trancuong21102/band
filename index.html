@@ -7,29 +7,34 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="res.css">
 </head>
 <body>
     <div id="main">
         <div id="header">
             <ul class="header__nav">
                 <li><a href="">Home</a></li>
-                <li><a href="">Band</a></li>
-                <li><a href="">Tour</a></li>
-                <li><a href="">Contact</a></li>
+                <li><a href="#band">Band</a></li>
+                <li><a href="#tour">Tour</a></li>
+                <li><a href="#contact">Contact</a></li>
                 <li class="header__nav--more">
-                    <a href="">
+                    <a href="#">
                         More
                         <i class="header__nav--icon--down fa-solid fa-chevron-down"></i>
                     </a>
                     <ul class="header__subnav">
-                        <li><a href="">Merchandise</a></li>
-                        <li><a href="">Extras</a></li>
-                        <li><a href="">Media</a></li>
+                        <li><a href="#">Merchandise</a></li>
+                        <li><a href="#">Extras</a></li>
+                        <li><a href="#">Media</a></li>
                     </ul>
                 </li>
             </ul>
             <div class="header__search__icon">
                 <i class="header__search--icon--search fa-solid fa-magnifying-glass"></i>
+            </div>
+
+            <div id="mobile-menu" class="menu-btn" >
+                <i class="fa-solid fa-bars"></i>
             </div>
         </div>
         <div id="slider">
@@ -43,7 +48,7 @@
             </div>
         </div>
         <div id="content">
-            <div class="content__heading">
+            <div id="band" class="content__heading">
                 <h2 class="content__heading--title">THE BAND</h2>
                 <div class="content__heading--des">
                     <i>we love music</i>
@@ -69,7 +74,7 @@
                 </div>
         </div>
         <div id="content__tour">
-            <div class="content__heading">
+            <div id="tour" class="content__heading" >
                 <h2 class="content__heading--title">TOUR DATES</h2>
                     <div class="content__heading--des">
                         <i>Remember to book your tickets!</i>
@@ -95,7 +100,7 @@
                             <p class="des">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
                             <a href="" class="btn-buy">buy ticket</a>
                         </div>
-                        <div class="content__tour--info">
+                        <div class="content__tour--info mt--lr">
                             <img src="https://www.w3schools.com/w3images/paris.jpg" alt="">
                             <p class="country">New York</p>
                             <p class="date">Fri 27 Nov 2016</p>
@@ -115,8 +120,8 @@
 
         </div>
 
-        <div id="content__contact">
-            <div class="content__heading">
+        <div  id="content__contact">
+            <div id="contact" class="content__heading">
                 <h2 class="content__heading--title">CONTACT</h2>
                 <div class="content__heading--des">
                     <i> Fan? Drop a note!</i>
@@ -158,3 +163,27 @@
     </div>
 </body>
 </html>
+
+<script>
+    var header = document.getElementById('header');
+    var mobileMenu = document.getElementById('mobile-menu');
+    var headerHeight = header.clientHeight;
+    mobileMenu.onclick = function(){
+        var isOpen = header.clientHeight===headerHeight;
+        if(isOpen){
+            header.style.height = 'auto';
+
+        }else{
+            header.style.height = null;
+        }
+    }
+
+
+    var menuItems = document.querySelectorAll('.header__nav li a[href*="#"]');
+    for (var i = 0; i<menuItems.length;i++){
+        var menuItem = menuItems[i];
+        menuItem.onclick = function(){
+            console.log(this);
+        }
+    }
+</script>
