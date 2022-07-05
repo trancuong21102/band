@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+html{
+    scroll-behavior: smooth;
+    
+}
+
 .clear{
     clear: both; 
     /* cách này để fix khi dùng float bên trong cha làm cha không ôm được th con  */
@@ -11,7 +16,7 @@
 
 #main{
     font-family:Segoe UI",Arial,sans-serif";
-
+    max-width: 100%;
 }
 
 #header{
@@ -22,6 +27,7 @@
     left:0;
     right:0;
     z-index:1;
+    overflow: hidden;
 }
 
 
@@ -86,25 +92,41 @@
     color: #000;
 }
 
-.header__search__icon{
+.header__search__icon,
+.menu-btn{
     float: right;
 
 }
-
+.menu-btn{
+    position:absolute;
+    top:0;
+    right:0;
+}
 .header__nav--icon--down{
     margin-left: 10px;
     font-size: 15px;
 }
 
-.header__search__icon{
+.header__search__icon,
+.menu-btn{
     color: #fff;
     line-height: 46px;
     padding: 0 21px;
 }
 
-.header__search__icon:hover{
+.menu-btn:hover{
+    background-color: #ccc;
+    color: #000;
+}
+
+.header__search__icon:hover
+{
     background-color: red;
     cursor: pointer;
+}
+
+.menu-btn{
+    display: none;
 }
 
 
@@ -112,7 +134,7 @@
     position: relative;
     margin-top: 46px;
     padding-top: 50%;
-    background:url('img/slider/slider1.jpeg')  top center /cover no-repeat;
+    background:url('/img/slider/slider1.jpeg')  top center /cover no-repeat;
 
 }
 
@@ -133,21 +155,24 @@
 }
 
 #content{
-
+    margin-top: 100px;
     padding: 64px -2px;
 }
 
 .content__heading{
     width: 800px;
+    max-width: 100%;
     margin-left:auto;
     margin-right: auto;
-   
+   padding: 64px 16px
 }
 
 .content__heading--title{
     text-align: center;
     margin:10px 0 ;
     letter-spacing:4px;
+    padding-top: 80px;
+    margin-top: -102px;
 }
 
 .content__heading--des{
@@ -168,7 +193,7 @@
 }
 
 .content__info{
-    margin-top: 48px;
+    margin: 48px 0;
 }
 
 .content__info__member{
@@ -182,15 +207,14 @@
 }
 
 .content__info__member img{
-    width: 154px;
+    width: 60%;
     border-radius: 4px;
-    padding: 32px 0;
 }
 
 
 .content__info--para{
     text-align:center;
-    margin-bottom: 30px;
+    margin:10px 0;
 }
 
 #content__tour{
@@ -234,13 +258,13 @@
 
 .content__tour--buy-ticket{
     margin-top: 25px;
-    width:245px;
+    width:100%;
     display: flex;
     justify-content: space-between;
 }
 
 .content__tour--buy-ticket img{
-    width:250px;
+    width:100%;
     
 }
 
@@ -282,8 +306,13 @@
     line-height: 21px;
     padding-bottom: 30px;
     background-color:#fff;
-    margin-right: 25px;
 }
+
+.mt--lr{
+    margin:0 25px;
+}
+
+
 
 
 #content__contact{
@@ -310,9 +339,7 @@
     opacity:0.5
 }
 
-.content__contact--contact--form  {
-    margin-left:-60px;
-}
+
 
 .content__contact--contact--form a{
     float:right;
@@ -367,3 +394,4 @@
 .link a{
     color: #000;
 }
+
