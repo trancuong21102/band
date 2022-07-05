@@ -1,0 +1,56 @@
+@media (max-width: 740px){
+
+    .header__nav {
+        display:block;
+    }
+
+    .header__search__icon{
+        display: none;
+    }
+
+    .header__nav li:first-child{
+        display: inline-block;
+    }
+
+    .header__search__icon{
+        display: none;
+    }
+
+    .header__nav > li {
+        display: block;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+    .content__info__member{
+        width: 100%;
+    }
+
+    .content__tour--buy-ticket{
+        flex-wrap: wrap;
+        
+    }
+    .mt--lr{
+        display: none;
+    }
+
+    .content__tour--info{
+        margin-bottom: 30px;
+        width: 100%;
+    }
+
+    .content__contact--form {
+        flex-wrap: wrap;
+    }
+
+    .content__contact--contact--form{
+        margin: 20px 0;
+    }
+
+    .content__contact--contact--form input {
+        width: 100%;
+    }
+
+
+}
